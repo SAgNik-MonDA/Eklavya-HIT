@@ -1,0 +1,207 @@
+/* Custom Variables */
+:root {
+    --sky-lightest: #edf5fd;
+    --sky-light: #d3e4fd;
+    --sky-medium: #3498db;
+    --sky-dark: #1e6ca6;
+    --blue-dark: #1a365d;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-open: 'Open Sans', sans-serif;
+  }
+  
+  /* Base Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-open);
+    padding-top: 60px; /* Added to prevent content from hiding behind fixed navbar */
+  }
+  
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+  
+  .font-open {
+    font-family: var(--font-open);
+  }
+  
+  .bg-sky {
+    background-color: var(--sky-lightest);
+  }
+  
+  .bg-blue-dark {
+    background-color: var(--blue-dark);
+  }
+  
+  .text-sky-dark {
+    color: var(--sky-dark);
+  }
+  
+  .text-sky-medium {
+    color: var(--sky-medium);
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-logo {
+    height: 45px;
+    width: auto;
+  }
+  
+  .back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sky-dark);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--sky-light);
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: var(--sky-light);
+    color: var(--sky-dark);
+  }
+  
+  .nav-link {
+    color: var(--sky-dark) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.25rem;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--blue-dark) !important;
+  }
+  
+  /* Card Styles */
+  .member-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  .member-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .member-card:hover {
+    box-shadow: 0 10px 15px rgba(51, 153, 255, 0.2);
+    transform: scale(1.05);
+  }
+  
+  .member-image-container {
+    height: 16rem;
+    overflow: hidden;
+  }
+  
+  .member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+  }
+  
+  .member-card:hover .member-image {
+    transform: scale(1.1);
+  }
+  
+  .member-info {
+    padding: 1.5rem;
+  }
+  
+  .member-name {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--sky-dark);
+    margin-bottom: 0.25rem;
+  }
+  
+  .member-position {
+    font-family: var(--font-poppins);
+    color: var(--sky-medium);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  
+  .member-description {
+    color: #64748b;
+    font-size: 0.875rem;
+  }
+  
+  /* Footer Styles */
+  .text-white-80 {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .hover-sky {
+    transition: color 0.3s ease;
+  }
+  
+  .hover-sky:hover {
+    color: var(--sky-light) !important;
+  }
+  
+  /* Media queries for responsive navbar */
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .navbar-logo {
+      height: 35px;
+    }
+    
+    .back-button {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  .member-card img {
+    height: 400px; /* or whatever height suits your layout */
+    object-fit: cover;
+    object-position: center ;
+    width: 100%;
+    border-top-left-radius: 0.60rem;
+    border-top-right-radius: 0.75rem;
+  }
+  
+  /* Normal image style */
+.member-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Zoom out or reposition just for Snega */
+.snega-img {
+  object-position: top center;
+  /* Adjust zoom out level */
+}
+.member-img .pratham{
+   height: 500px;
+}
