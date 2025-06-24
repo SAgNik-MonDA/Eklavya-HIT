@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Eklavya - Vision & Mission</title>
+    <meta name="description" content="Team Eklavya - A non-profit organization dedicated to animal welfare and child education" />
+    <meta name="author" content="Team Eklavya" />
+      <link rel="icon" href="./icon.jpg">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./ekl logo.jpg">
+    <style>
+      /* General Styles */
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        overflow-x: hidden;
+        padding-top: 76px; /* Added padding for fixed navbar */
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+      }
+      
+      .bg-gradient-light-blue {
+        background: linear-gradient(135deg, #e6f7ff 0%, #f0f8ff 100%);
+        min-height: 100vh;
+      }
+      
+      /* Navbar styles */
+      .navbar-brand img {
+        height: 50px;
+        transition: transform 0.3s ease;
+      }
+      
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+      
+      .navbar {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-link {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        color: #1A366B !important;
+        transition: color 0.3s, transform 0.3s;
+        margin: 0 8px;
+      }
+      
+      .nav-link:hover {
+        color: #0d6efd !important;
+        transform: translateY(-2px);
+      }
+      
+      .nav-link.active {
+        color: #0d6efd !important;
+        font-weight: 600;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+      }
+      
+      @media (min-width: 768px) {
+        .hero-section {
+          height: 600px;
+        }
+      }
+      
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center 30%;
+        transition: transform 1.5s;
+      }
+      
+      .bg-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: #1A366B;
+        opacity: 0.6;
+      }
+      
+      .hero-content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 0 1rem;
+      }
+      
+      /* Section container */
+      .section-container {
+        padding: 5rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      /* Card styling */
+      .vision-card, .mission-card {
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        height: 100%;
+      }
+      
+      .mission-point {
+        background-color: rgba(230, 247, 255, 0.5);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s;
+      }
+      
+      .mission-point:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .icon-circle {
+        background-color: white;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+      }
+      
+      .text-eklavya-deep-blue {
+        color: #1A366B;
+      }
+      
+      /* Footer */
+      .footer {
+        background-color: #1A366B;
+        color: white;
+        padding: 3rem 0 1.5rem;
+      }
+      
+      .footer a {
+        color: #e6f7ff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      
+      .footer a:hover {
+        color: white;
+      }
+      
+      .social-icon {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+      
+      .social-icon:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .scroll-to-top-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #1A366B;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+      
+      .scroll-to-top-btn.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      /* Animation classes */
+      .animate-zoom-in {
+        animation: zoom-in 1.5s forwards;
+      }
+      
+      .animate-fade-in-down {
+        opacity: 0;
+        transform: translateY(-10px);
+        animation: fade-in-down 1s forwards;
+      }
+      
+      .animate-slide-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: slide-in-left 1s forwards;
+      }
+      
+      .animate-slide-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        animation: slide-in-right 1s forwards;
+      }
+      
+      /* Keyframes */
+      @keyframes zoom-in {
+        from {
+          transform: scale(1.1);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      
+      @keyframes fade-in-down {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slide-in-left {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes slide-in-right {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-gradient-light-blue">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="logo.jpg" alt="Team Eklavya Logo" class="me-3">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <button class="donate-button">
+                    <i class="fas fa-heart"></i>
+                    <a href="https://forms.gle/vTwCaKs3xejEtFXg6" style="text-decoration: none;">
+                      Donate Us
+                    </a>                   </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="hero-bg" id="hero-bg" style="background-image: url(vision-bg.jpg)">
+          <div class="bg-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+          <h1 class="animate-fade-in-down" style="animation-delay: 0.3s">Our Vision & Mission</h1>
+          <div class="w-20 h-1 bg-white mx-auto mb-4 animate-fade-in-down" style="animation-delay: 0.6s; width: 80px; height: 4px;"></div>
+          <p class="fs-4 animate-fade-in-down" style="animation-delay: 0.9s; max-width: 800px">
+            "Empowering through compassion. Building through action."
+          </p>
+        </div>
+      </div>
+
+      <!-- Vision Section -->
+      <section id="vision-section" class="section-container">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6" id="vision-text">
+            <div class="vision-card">
+              <div class="position-relative overflow-hidden">
+                <div class="position-absolute top-0 end-0 bg-info bg-opacity-25 rounded-bottom-start d-flex align-items-center justify-content-center" style="width: 112px; height: 112px; margin-top: -16px; margin-right: -16px;">
+                  <i class="fas fa-eye fa-2x text-eklavya-deep-blue" style="transform: translate(-12px, 12px);"></i>
+                </div>
+              </div>
+              <h2 class="text-eklavya-deep-blue mb-4 fs-1">Our Vision</h2>
+              <p class="text-secondary mb-4">
+                Team Eklavya envisions a world where every animal receives compassionate care and every child has access to quality education. We strive to create communities where kindness toward all living beings is the foundation of a more equitable society.
+              </p>
+              <p class="text-secondary">
+                Through our dedicated efforts in animal welfare and child education, we aim to foster empathy, resilience, and hope for generations to come. We believe in creating lasting change by starting small, helping people with their urgent needs now, while also working to fix the bigger problems over time.
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 d-none d-md-block" id="vision-image">
+            <img 
+              src="vision.jpg" 
+              alt="Child and dog embracing" 
+              class="rounded-3 shadow-sm img-fluid"
+              style="height: 350px; width: 100%; object-fit: cover;"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section id="mission-section" class="section-container bg-light py-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6 d-none d-md-block" id="mission-image">
+            <img 
+              src="mission.jpg" 
+              alt="Volunteers helping in community" 
+              class="rounded-3 shadow-sm img-fluid"
+              style="height: 350px; width: 100%; object-fit: cover;"
+            />
+          </div>
+          
+          <div class="col-md-6" id="mission-text">
+            <div class="mission-card">
+              <h2 class="text-eklavya-deep-blue mb-4 fs-1">Our Mission</h2>
+              <p class="text-secondary mb-4">
+                Team Eklavya is dedicated to creating meaningful change through direct action and sustainable programs that address the needs of both animals and children in our communities.
+              </p>
+              
+              <div class="mission-points space-y-4">
+                <!-- Animal Welfare -->
+                <div class="mission-point mb-3" id="mission-point-1">
+                  <div class="d-flex flex-column flex-sm-row align-items-start gap-3">
+                    <div class="icon-circle p-3">
+                      <i class="fas fa-heart fa-2x text-eklavya-deep-blue"></i>
+                    </div>
+                    <div>
+                      <h3 class="fs-4 fw-bold text-eklavya-deep-blue mb-2">Animal Welfare</h3>
+                      <p class="text-secondary mb-0">
+                        Rescue, feed, treat, and provide care for street animals in need, creating a compassionate approach to animal welfare.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Child Education -->
+                <div class="mission-point mb-3" id="mission-point-2">
+                  <div class="d-flex flex-column flex-sm-row align-items-start gap-3">
+                    <div class="icon-circle p-3">
+                      <i class="fas fa-book fa-2x text-eklavya-deep-blue"></i>
+                    </div>
+                    <div>
+                      <h3 class="fs-4 fw-bold text-eklavya-deep-blue mb-2">Child Education</h3>
+                      <p class="text-secondary mb-0">
+                        Provide quality education, resources, and awareness programs for underprivileged children to build a foundation for their future.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Community Service -->
+                <div class="mission-point mb-3" id="mission-point-3">
+                  <div class="d-flex flex-column flex-sm-row align-items-start gap-3">
+                    <div class="icon-circle p-3">
+                      <i class="fas fa-users fa-2x text-eklavya-deep-blue"></i>
+                    </div>
+                    <div>
+                      <h3 class="fs-4 fw-bold text-eklavya-deep-blue mb-2">Community Service</h3>
+                      <p class="text-secondary mb-0">
+                        Organize special events like mass food distribution, hosting awareness programmes on several sensitive issues of the society and celebrating cultural events to get in touch with their roots.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+              <h3 class="fs-5 fw-bold mb-4">Team Eklavya</h3>
+              <p class="text-white-50 mb-4">
+                A Social Welfare society of Haldia Institute of Technology dedicated to animal welfare and child education, making a difference one life at a time.
+              </p>
+              <div class="d-flex gap-3">
+                <a href="https://www.facebook.com/share/16Gg1utjaR/" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/eklavyaofficial_?igsh=MXg3eGN6eHR5Y2tqeA==" class="social-icon">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+            
+            
+            
+            <div class="col-lg-4">
+              <h3 class="fs-5 fw-bold mb-4">Contact Us</h3>
+              <address class="text-white-50">
+                <p>Hatiberia, ICARE complex, HIT Campus</p>
+                <p>Haldia, Purba Medinipur, West Bengal</p>
+                <p>India</p>
+                <p class="mt-2">eklavya.official.haldia@gmail.com</p>
+                <p>Phone: +91 6297115872</p>
+              </address>
+            </div>
+          </div>
+          
+          <div class="border-top border-secondary mt-5 pt-4">
+            <p class="small text-center text-white-50">
+              © <span id="currentYear"></span> Eklavya. All rights reserved.
+            </p>
+          </div>
+        </div>
+        
+        <button 
+          class="scroll-to-top-btn"
+          id="scrollTopBtn"
+          aria-label="Scroll to top"
+        >
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Hero section animation
+      document.addEventListener('DOMContentLoaded', function() {
+        const heroBg = document.getElementById('hero-bg');
+        setTimeout(() => {
+          heroBg.classList.add('animate-zoom-in');
+        }, 100);
+        
+        // Highlight current page in navbar
+        const currentPage = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === currentPage || (currentPage.includes(href) && href !== '/')) {
+            link.classList.add('active');
+          } else if (href === '/' && currentPage === '/') {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      });
+      
+      // Scroll to top button functionality
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+      
+      scrollBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.2
+      };
+      
+      // Observer for Vision Section
+      const visionObserver = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          document.getElementById('vision-text').classList.add('animate-slide-in-left');
+          const visionImage = document.getElementById('vision-image');
+          if (visionImage) {
+            setTimeout(() => {
+              visionImage.classList.add('animate-slide-in-right');
+            }, 300);
+          }
+          visionObserver.disconnect();
+        }
+      }, observerOptions);
+      
+      const visionSection = document.getElementById('vision-section');
+      if (visionSection) {
+        visionObserver.observe(visionSection);
+      }
+      
+      // Observer for Mission Section
+      const missionObserver = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          document.getElementById('mission-image').classList.add('animate-slide-in-left');
+          setTimeout(() => {
+            document.getElementById('mission-text').classList.add('animate-slide-in-right');
+            
+            // Mission points animation
+            const missionPoints = document.querySelectorAll('.mission-point');
+            missionPoints.forEach((point, index) => {
+              setTimeout(() => {
+                point.style.opacity = '1';
+              }, 600 + (index * 200));
+            });
+          }, 300);
+          missionObserver.disconnect();
+        }
+      }, observerOptions);
+      
+      const missionSection = document.getElementById('mission-section');
+      if (missionSection) {
+        missionObserver.observe(missionSection);
+      }
+      
+      // Initialize mission points opacity to 0
+      document.querySelectorAll('.mission-point').forEach(point => {
+        point.style.opacity = '0';
+      });
+      
+      // Scroll to top on page load
+      window.scrollTo(0, 0);
+    </script>
+  </body>
+</html>
